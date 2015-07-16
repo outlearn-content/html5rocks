@@ -1,0 +1,25 @@
+{
+  "olpVersion" : "0.1",
+
+  "paths" : [
+    {
+      "name" : "all-modules",
+      "title" : "All Modules by HTML5 Rocks",
+      "description" : "See in one place all the modules published by HTML5 Rocks.",
+      "coverImage" : "https://raw.githubusercontent.com/outlearn-content/assets/master/space.jpg",
+      "privacy" : "public",
+      "pages" : [
+        {"module" : "javascript-promises"},
+        {"module" : "async-call-stack"}
+      ]
+    }
+  ],
+
+  "modules" : [
+    {"olm" : "./modules/javascript-promises.md"},
+    {"olm" : "./modules/async-call-stack.md"}
+  ],
+
+  "assets" : [
+  ]
+}
