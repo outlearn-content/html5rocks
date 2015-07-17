@@ -26,9 +26,9 @@ _[Fireworks explode, glittery paper rains from above, the crowd goes wild]_
 
 At this point you fall into one of these categories:
 
-*   People are cheering around you, but you're not sure what all the fuss is about. Maybe you're not even sure what a "promise" is. You'd shrug, but the weight of glittery paper is weighing down on your shoulders. If so, don't worry about it, it took me ages to work out why I should care about this stuff. [You probably want to begin here](#toc-async)
-*   You punch the air! About time right? You've used these Promise things before but it bothers you that all implementations have a slightly different API. What's the API for the official JavaScript version? [You probably want to begin here](#toc-promise-terminology)
-*   You knew about this already and you scoff at those who are jumping up and down like it's news to them. Take a moment to bask in your own superiority, then head straight to the [API reference](#toc-api)
+*   People are cheering around you, but you're not sure what all the fuss is about. Maybe you're not even sure what a "promise" is. You'd shrug, but the weight of glittery paper is weighing down on your shoulders. If so, don't worry about it, it took me ages to work out why I should care about this stuff. You probably want to begin here right at the beginning.
+*   You punch the air! About time right? You've used these Promise things before but it bothers you that all implementations have a slightly different API. What's the API for the official JavaScript version? You probably want to begin at the section Promise terminology.
+*   You knew about this already and you scoff at those who are jumping up and down like it's news to them. Take a moment to bask in your own superiority, then head straight to the section Promise API Reference.
 
 <!-- @section -->
 
@@ -130,13 +130,10 @@ This is extremely useful for async success/failure, because you're less interest
 
 A promise can be:
 
-fulfilled - The action relating to the promise succeeded
-
-rejected - The action relating to the promise failed
-
-pending - Hasn't fulfilled or rejected yet
-
-settled - Has fulfilled or rejected
+**fulfilled** - The action relating to the promise succeeded  
+**rejected** - The action relating to the promise failed  
+**pending** - Hasn't fulfilled or rejected yet  
+**settled** - Has fulfilled or rejected  
 
 [The spec](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects) also uses the term **thenable** to describe an object that is promise-like, in that it has a `then` method. This term reminds me of ex-England Football Manager [Terry Venables](http://en.wikipedia.org/wiki/Terry_Venables) so I'll be using it as little as possible.
 
