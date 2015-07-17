@@ -8,7 +8,7 @@
 "homepage" : "http://www.html5rocks.com/",
 "canonicalSource" : "http://www.html5rocks.com/en/tutorials/es6/promises/",
 "author" : "Jake Archibald",
-"license" : "Content: CC BY 3.0, Code: Apache 2.0"
+"license" : "Content - CC BY 3.0, Code - Apache 2.0"
 }
 -->
 
