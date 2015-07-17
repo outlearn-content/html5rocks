@@ -849,7 +849,7 @@ All methods work in Chrome, Opera and in Firefox Nightly unless otherwise noted.
 **`Promise.resolve(promise);`**  
 Returns promise (only if `promise.constructor == Promise`)
 
-`Promise.resolve(thenable);`  
+`**Promise.resolve(thenable);**`  
 Make a new promise from the thenable. A thenable is promise-like in as far as it has a "then" method.
 
 `Promise.resolve(obj);`  
