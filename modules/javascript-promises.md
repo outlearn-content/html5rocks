@@ -300,7 +300,7 @@ javascriptget('story.json').then(function(response) {
 });
 ```
 
-[Click here to see that in action](story.json), check the console in DevTools to see the result.Now we can make HTTP requests without manually typing `XMLHttpRequest`, which is great, because the less I have to see the infuriating camel-casing of `XMLHttpRequest`, the happier my life will be.
+[Click here to see that in action](http://www.html5rocks.com/en/tutorials/es6/promises/story.json), check the console in DevTools to see the result.Now we can make HTTP requests without manually typing `XMLHttpRequest`, which is great, because the less I have to see the infuriating camel-casing of `XMLHttpRequest`, the happier my life will be.
 
 <!-- @section -->
 
@@ -333,7 +333,7 @@ get('story.json').then(function(response) {
 });
 ```
 
-The response is JSON, but we're currently receiving it as plain text. We could alter our get function to use the JSON `[responseType](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#responseType)`, but we could also solve it in promises land:
+The response is JSON, but we're currently receiving it as plain text. We could alter our get function to use the JSON [`responseType`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#responseType), but we could also solve it in promises land:
 
 ```javascript
 get('story.json').then(function(response) {
@@ -565,7 +565,7 @@ catch (err) {
 document.querySelector('.spinner').style.display = 'none';
 ```
 
-That works ([see example](sync-example.html))! But it's sync and locks up the browser while things download. To make this work async we use "then" to make things happen one after another.
+That works ([see example](http://www.html5rocks.com/en/tutorials/es6/promises/sync-example.html))! But it's sync and locks up the browser while things download. To make this work async we use "then" to make things happen one after another.
 
 ```javascript
 getJSON('story.json').then(function(story) {
@@ -621,7 +621,7 @@ This is the first time we've seen `Promise.resolve`, which creates a promise tha
 
 There's also `Promise.reject(val)`, which creates a promise that rejects with the value you give it (or undefined).
 
-We can tidy up the above code using `[array.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)`:
+We can tidy up the above code using [`array.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce):
 
 ```javascript
 // Loop through our chapter urls
@@ -665,7 +665,7 @@ getJSON('story.json').then(function(story) {
 });
 ```
 
-And there we have it ([see example](async-example.html)), a fully async version of the sync version. But we can do better. At the moment our page is downloading like this:
+And there we have it ([see example](http://www.html5rocks.com/en/tutorials/es6/promises/async-example.html)), a fully async version of the sync version. But we can do better. At the moment our page is downloading like this:
 
 ![Promise 1](https://raw.githubusercontent.com/outlearn-content/html5rocks/master/modules/promise1.gif)
 
@@ -704,7 +704,7 @@ getJSON('story.json').then(function(story) {
 });
 ```
 
-Depending on connection, this can be seconds faster than loading one-by-one ([see example](async-all-example.html)), and it's less code than our first try. The chapters can download in whatever order, but they appear on screen in the right order.
+Depending on connection, this can be seconds faster than loading one-by-one ([see example](http://www.html5rocks.com/en/tutorials/es6/promises/async-all-example.html)), and it's less code than our first try. The chapters can download in whatever order, but they appear on screen in the right order.
 
 ![Promise 2](https://raw.githubusercontent.com/outlearn-content/html5rocks/master/modules/promise2.gif)
 
@@ -741,7 +741,7 @@ getJSON('story.json').then(function(story) {
 });
 ```
 
-And there we go ([see example](async-best-example.html)), the best of both! It takes the same amount of time to deliver all the content, but the user gets the first bit of content sooner.
+And there we go ([see example](http://www.html5rocks.com/en/tutorials/es6/promises/async-best-example.html)), the best of both! It takes the same amount of time to deliver all the content, but the user gets the first bit of content sooner.
 
 ![Promise 3](https://raw.githubusercontent.com/outlearn-content/html5rocks/master/modules/promise3.gif)
 
@@ -832,7 +832,7 @@ spawn(function *() {
 });
 ```
 
-This works exactly as before, but so much easier to read. This works in Chrome and Opera today ([see example](async-generators-example.html)), but first you need to go to **about:flags** and turn on **Enable experimental JavaScript**.
+This works exactly as before, but so much easier to read. This works in Chrome and Opera today ([see example](http://www.html5rocks.com/en/tutorials/es6/promises/async-generators-example.html)), but first you need to go to **about:flags** and turn on **Enable experimental JavaScript**.
 
 This throws together a lot of new ES6 stuff: promises, generators, let, for-of. When we yield a promise, the spawn helper waits for the promise to resolve and returns the final value. If the promise rejects, spawn causes our yield statement to throw an exception, which we can catch with normal JavaScript try/catch. Amazingly simple async coding!
 
@@ -846,31 +846,25 @@ All methods work in Chrome, Opera and in Firefox Nightly unless otherwise noted.
 
 ### Static Methods
 
-`Promise.resolve(promise);`
-
+**`Promise.resolve(promise);`**  
 Returns promise (only if `promise.constructor == Promise`)
 
-`Promise.resolve(thenable);`
-
+`Promise.resolve(thenable);`  
 Make a new promise from the thenable. A thenable is promise-like in as far as it has a "then" method.
 
-`Promise.resolve(obj);`
-
+`Promise.resolve(obj);`  
 Make a promise that fulfills to `obj`. in this situation.
 
-`Promise.reject(obj);`
-
+`Promise.reject(obj);`  
 Make a promise that rejects to `obj`. For consistency and debugging (e.g. stack traces), `obj` should be an `instanceof Error`.
 
-`Promise.all(array);`
-
+`Promise.all(array);`  
 Make a promise that fulfills when every item in the array fulfills, and rejects if (and when) any item rejects. Each array item is passed to `Promise.resolve`, so the array can be a mixture of promise-like objects and other objects. The fulfillment value is an array (in order) of fulfillment values. The rejection value is the first rejection value.
 
-`Promise.race(array);`
-
+`Promise.race(array);`  
 Make a Promise that fulfills as soon as any item fulfills, or rejects as soon as any item rejects, whichever happens first.
 
-**Note:** I'm unconvinced of `Promise.race`'s usefulness; I'd rather have an opposite of `Promise.all` that only rejects if all items reject.
+> **Note:** I'm unconvinced of `Promise.race`'s usefulness; I'd rather have an opposite of `Promise.all` that only rejects if all items reject.
 
 
 ### Constructor
@@ -879,30 +873,23 @@ Make a Promise that fulfills as soon as any item fulfills, or rejects as soon as
 new Promise(function(resolve, reject) {});
 ```
 
-
-
-`resolve(thenable)`
-
+`resolve(thenable)`  
 Your promise will be fulfilled/rejected with the outcome of `thenable`
 
-`resolve(obj)`
-
+`resolve(obj)`  
 Your promise is fulfilled with `obj`
 
-`reject(obj)`
-
+`reject(obj)`  
 Your promise is rejected with `obj`. For consistency and debugging (eg stack traces), obj should be an `instanceof Error`. Any errors thrown in the constructor callback will be implicitly passed to `reject()`.
 
 
 ### Instance Methods
 
 
-`promise.then(onFulfilled, onRejected)`
-
+`promise.then(onFulfilled, onRejected)`  
 `onFulfilled` is called when/if "promise" resolves. `onRejected` is called when/if "promise" rejects. Both are optional, if either/both are omitted the next `onFulfilled`/`onRejected` in the chain is called. Both callbacks have a single parameter, the fulfillment value or rejection reason. "then" returns a new promise equivalent to the value you return from `onFulfilled`/`onRejected` after being passed through `Promise.resolve`. If an error is thrown in the callback, the returned promise rejects with that error.
 
-`promise.catch(onRejected)`
-
+`promise.catch(onRejected)`  
 Sugar for `promise.then(undefined, onRejected)`
 
 
