@@ -17,4 +17,4 @@
 
 [Read the article](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/).
 
-[![Debugging Asynchronous JavaScript with Chrome DevTools](https://raw.githubusercontent.com/outlearn-content/advanced-js/master/assets/pearlchan-debugging.png)](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/)
+[![Debugging Asynchronous JavaScript with Chrome DevTools](https://raw.githubusercontent.com/outlearn-content/advanced-js/master/assets/pearlchen-debugging.png)](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/)
