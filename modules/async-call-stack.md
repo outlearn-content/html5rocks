@@ -57,7 +57,7 @@ To see how async call stacks can help us analyze delayed timer events and XHR re
 
 By solely looking at the Call Stack panel in previous versions of DevTools, a breakpoint within `postOnFail()` would give you little information about where `postOnFail()` was being called from. But look at the difference when turning on async stacks:
 
-**_Before_**
+#### Before
 
 ![Breakpoint set in mock Gmail example without async call
  stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-before.gif)
@@ -65,7 +65,7 @@ By solely looking at the Call Stack panel in previous versions of DevTools, a br
 **_The Call Stack panel_ without _async enabled._**  
 Here you can see that `postOnFail()` was initiated from an AJAX callback but no further info.
 
- **_After_**
+ #### After
 
  ![Breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-click.gif)
 
@@ -74,11 +74,11 @@ Here you can see that the XHR was initiated from `submitHandler()`. Nice!
 
 With async call stacks turned on, you can view the entire call stack to easily see if the request was initiated from `submitHandler()` (which happens after clicking the submit button) or from `retrySubmit()` (which happens after a `setTimeout()` delay):
 
-**_submitHandler()_**
+#### submitHandler()
 
 ![Breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-click.gif)
 
-**_retrySubmit()_**
+#### retrySubmit()
 
 ![Another breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-retry-shortened.gif)
 
@@ -109,17 +109,22 @@ If you thought the previous mock Gmail flow was hard to unravel without the asyn
 
 ![Promise-flow](https://raw.githubusercontent.com/outlearn-content/html5rocks/master/assets/promise-flow.png)
 
-***Flow diagram from* JavaScript Promises.**
+**_Flow diagram from_ JavaScript Promises.**
 
 Here's a little animation of walking the call stacks in Jake's [async-best-example.html](http://www.html5rocks.com/en/tutorials/es6/promises/async-best-example.html) example.
 
-***Before***
-![Breakpoint set in promises example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/promises-before.gif) **The Call Stack panel *without* async enabled.**
+#### Before
 
+![Breakpoint set in promises example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/promises-before.gif)
+
+**The Call Stack panel *without* async enabled.**  
 Notice how the Call Stack panel is pretty short on info when trying to debug promises.
 
-***After*** ![Breakpoint set in promises example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/promises-after.gif) **The Call Stack panel *with* async enabled.**
+#### After
 
+![Breakpoint set in promises example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/promises-after.gif)
+
+**The Call Stack panel *with* async enabled.**  
 Wow! Such promises. Much callbacks.
 
 <!-- @section -->
@@ -129,17 +134,17 @@ Let's go deeper into the HTML5Rocks archives. Remember Paul Lewis' *[Leaner, Mea
 
 Open up the [requestAnimationFrame demo](http://www.html5rocks.com/en/tutorials/speed/animations/post.html) and add a breakpoint at the beginning of the `update()` method (around line 874) of post.html. With async call stacks we get a lot more insights into `requestAnimationFrame`, including the ability to walk all the way back to the initiating scroll event callback.
 
-***Before***
+#### Before
 
 ![Breakpoint set in requestAnimationFrame example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/requestAnimationFrame-before.gif)
 
-**The Call Stack panel *without* async enabled.**
+***The Call Stack panel *without* async enabled.***
 
-***After***
+#### After
 
 ![Breakpoint set in requestAnimationFrame example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/requestAnimationFrame-after.gif)
 
-**And *with* async enabled.**
+***And *with* async enabled.***
 
 <!-- @section -->
 ##Track down DOM updates when using MutationObserver
@@ -148,13 +153,13 @@ Open up the [requestAnimationFrame demo](http://www.html5rocks.com/en/tutorials/
 
 Add a breakpoint within `nodeAdded()` (line 31) in demo.html. With async call stacks enabled, you can now walk the call stack back through `addNode()` to the initial click event.
 
-***Before***
+#### Before
 
 ![Breakpoint set in mutationObserver example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/mutationObserver-before.gif)
 
 **The Call Stack panel *without* async enabled.**
 
-***After***
+#### After
 
 ![Breakpoint set in mutationObserver example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/mutationObserver-after.gif)
 
@@ -185,11 +190,11 @@ window.addEventListener('load', function windowLoaded(){
 
 When the load event fires, it will show up in the DevTools stack trace with its function name instead of the cryptic "*(anonymous function)*". This makes it much easier to see at a glance what's happening in your stack trace.
 
-***Before***
+#### Before
 
 ![An anonymous function](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/function-names-before.gif)
 
-***After***
+#### After
 
 ![A named function](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/function-names-after.gif)
 
