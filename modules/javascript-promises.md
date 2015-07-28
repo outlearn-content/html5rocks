@@ -5,7 +5,7 @@
 "title" : "JavaScript Promises",
 "description" : "So what are these promises all about and why should I care?",
 "freshnessDate" : 2014-01-29,
-"homepage" : "http://www.html5rocks.com/",
+"homepage" : "http://www.html5rocks.com/en/tutorials/es6/promises/",
 "canonicalSource" : "http://www.html5rocks.com/en/tutorials/es6/promises/",
 "author" : "Jake Archibald",
 "license" : "Content - CC BY 3.0, Code - Apache 2.0"
@@ -846,7 +846,7 @@ All methods work in Chrome, Opera and in Firefox Nightly unless otherwise noted.
 
 ### Static Methods
 
-`Promise.resolve(promise);` 
+`Promise.resolve(promise);`
 Returns promise (only if `promise.constructor == Promise`)
 
 `Promise.resolve(thenable);`  

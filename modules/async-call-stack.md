@@ -5,7 +5,7 @@
 "title" : "Debugging Asynchronous JavaScript with Chrome DevTools",
 "description" : "Assigning async callbacks lets you write event-driven code but it also makes tracking down bugs a hair pulling experience since the JavaScript is not executing in a linear fashion. Luckily, now in Chrome DevTools, you can view the full call stack of asynchronous JavaScript callbacks!",
 "freshnessDate" : 2014-07-04,
-"homepage" : "http://www.html5rocks.com/",
+"homepage" : "http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/",
 "canonicalSource" : "http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/",
 "author" : "Pearl Chen",
 "license" : "Content - CC BY 3.0, Code - Apache 2.0"
@@ -65,7 +65,7 @@ By solely looking at the Call Stack panel in previous versions of DevTools, a br
 **_The Call Stack panel_ without _async enabled._**  
 Here you can see that `postOnFail()` was initiated from an AJAX callback but no further info.
 
- #### After
+#### After
 
  ![Breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-click.gif)
 
