@@ -117,14 +117,14 @@ Here's a little animation of walking the call stacks in Jake's [async-best-examp
 
 ![Breakpoint set in promises example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/promises-before.gif)
 
-**The Call Stack panel *without* async enabled.**  
+**_The Call Stack panel_ without _async enabled._**  
 Notice how the Call Stack panel is pretty short on info when trying to debug promises.
 
 #### After
 
 ![Breakpoint set in promises example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/promises-after.gif)
 
-**The Call Stack panel *with* async enabled.**  
+**_The Call Stack panel_ with _async enabled._**  
 Wow! Such promises. Much callbacks.
 
 <!-- @section -->
@@ -138,13 +138,13 @@ Open up the [requestAnimationFrame demo](http://www.html5rocks.com/en/tutorials/
 
 ![Breakpoint set in requestAnimationFrame example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/requestAnimationFrame-before.gif)
 
-***The Call Stack panel *without* async enabled.***
+**_The Call Stack panel_ without _async enabled._**
 
 #### After
 
 ![Breakpoint set in requestAnimationFrame example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/requestAnimationFrame-after.gif)
 
-***And *with* async enabled.***
+**_And_ with _async enabled._**
 
 <!-- @section -->
 ##Track down DOM updates when using MutationObserver
@@ -157,13 +157,13 @@ Add a breakpoint within `nodeAdded()` (line 31) in demo.html. With async call st
 
 ![Breakpoint set in mutationObserver example without async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/mutationObserver-before.gif)
 
-**The Call Stack panel *without* async enabled.**
+**_The Call Stack panel_ without _async enabled._**
 
 #### After
 
 ![Breakpoint set in mutationObserver example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/mutationObserver-after.gif)
 
-**And *with* async enabled.**
+**_And_ with _async enabled._**
 
 <!-- @section -->
 ##Tips for debugging JavaScript in async call stacks
