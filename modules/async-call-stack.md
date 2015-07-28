@@ -20,7 +20,10 @@ A powerful feature that makes JavaScript unique is its ability to work asynchron
 
 Luckily, now in Chrome DevTools, you can view the **full** call stack of asynchronous JavaScript callbacks!
 
-![A quick teaser overview of async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-async.gif) ***A quick teaser overview of async call stacks.*** (We'll break down the flow of this demo soon.)
+![A quick teaser overview of async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-async.gif)
+
+**_A quick teaser overview of async call stacks._**  
+(We'll break down the flow of this demo soon.)
 
 Once you enable the async call stack feature in DevTools, you will be able to drill into the state of your web app at various points in time. Walk the full stack trace for some event listeners, `setInterval`, `setTimeout`, `XMLHttpRequest`, promises, `requestAnimationFrame`, `MutationObservers`, and more.
 
@@ -48,30 +51,34 @@ If there is a problem sending the request (either the server is having problems 
 
 To see how async call stacks can help us analyze delayed timer events and XHR responses, I've recreated that flow with a [mock Gmail example](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr/demo.html). The full JavaScript code can be found in the link above but the flow is as follows:
 
-![Flow chart of mock Gmail example](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-async-flow.gif) ***In the diagram above, the methods highlighted in blue are prime spots for this new DevTool feature to be the most beneficial since these methods work asynchronously.***
+![Flow chart of mock Gmail example](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-async-flow.gif)
+
+**_In the diagram above, the methods highlighted in blue are prime spots for this new DevTool feature to be the most beneficial since these methods work asynchronously._**
 
 By solely looking at the Call Stack panel in previous versions of DevTools, a breakpoint within `postOnFail()` would give you little information about where `postOnFail()` was being called from. But look at the difference when turning on async stacks:
 
-***Before***
+**_Before_**
 
 ![Breakpoint set in mock Gmail example without async call
  stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-before.gif)
 
- **The Call Stack panel *without* async enabled.** Here you can see that `postOnFail()` was initiated from an AJAX callback but no further info.
+**_The Call Stack panel_ without _async enabled._**  
+Here you can see that `postOnFail()` was initiated from an AJAX callback but no further info.
 
- ***After***
+ **_After_**
 
  ![Breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-click.gif)
 
-**The Call Stack panel *with* async enabled.** Here you can see that the XHR was initiated from `submitHandler()`. Nice!
+**_The Call Stack panel_ with _async enabled._**  
+Here you can see that the XHR was initiated from `submitHandler()`. Nice!
 
 With async call stacks turned on, you can view the entire call stack to easily see if the request was initiated from `submitHandler()` (which happens after clicking the submit button) or from `retrySubmit()` (which happens after a `setTimeout()` delay):
 
-**submitHandler()**
+**_submitHandler()_**
 
 ![Breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-click.gif)
 
-**retrySubmit()**
+**_retrySubmit()_**
 
 ![Another breakpoint set in mock Gmail example with async call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/xhr-after-retry-shortened.gif)
 
@@ -91,7 +98,7 @@ Imagine that you are Dr. Who and you need a little help comparing the clock from
 
 ![An example of using the JavaScript console with aysnc call stacks](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/time-travel.gif)
 
-**Use the JavaScript console in conjunction with async call stacks to debug your code. The above demo can be found [here](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/past-scope/demo.html).**
+**_Use the JavaScript console in conjunction with async call stacks to debug your code. The above demo can be found [here](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/past-scope/demo.html)._**
 
 Staying within DevTools to manipulate your expressions will save you time from having to switch back to your source code, make edits, and refresh the browser.
 
@@ -100,7 +107,7 @@ Staying within DevTools to manipulate your expressions will save you time from h
 
 If you thought the previous mock Gmail flow was hard to unravel without the async call stack feature enabled, can you imagine how much harder it would be with more complex asynchronous flows like chained promises? Let's revisit the final example of Jake Archibald's tutorial on [JavaScript Promises.](http://www.html5rocks.com/en/tutorials/es6/promises/)
 
-![Promise-flow](promise-flow.png)
+![Promise-flow](https://raw.githubusercontent.com/outlearn-content/html5rocks/master/assets/promise-flow.png)
 
 ***Flow diagram from* JavaScript Promises.**
 
