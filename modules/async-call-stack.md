@@ -149,7 +149,7 @@ Open up the [requestAnimationFrame demo](http://www.html5rocks.com/en/tutorials/
 <!-- @section -->
 ##Track down DOM updates when using MutationObserver
 
-`MutationObserver` allow us to observe changes in the DOM. In this [simple example](mutation-observers/demo.html), when you click on the button, a new DOM node is appended to ` <div class="rows"></div>`.
+`MutationObserver` allow us to observe changes in the DOM. In this [simple example](http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/mutation-observers/demo.html), when you click on the button, a new DOM node is appended to ` <div class="rows"></div>`.
 
 Add a breakpoint within `nodeAdded()` (line 31) in demo.html. With async call stacks enabled, you can now walk the call stack back through `addNode()` to the initial click event.
 
