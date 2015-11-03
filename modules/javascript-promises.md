@@ -292,8 +292,8 @@ function get(url) {
 
 Now let's use it:
 
-```
-javascriptget('story.json').then(function(response) {
+```javascript
+get('story.json').then(function(response) {
   console.log("Success!", response);
 }, function(error) {
   console.error("Failed!", error);
